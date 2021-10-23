@@ -1,27 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Navbar, Nav, NavItem, NavDropdown, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import nlpGlossary from "../assets/icon.png";
 export default class NavbarComponent extends React.Component {
     render() {
         return (
-            <Navbar bg="light" expand="lg">
+            <Navbar expand="lg" className={"navbar"}>
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand href="#home"><img src={nlpGlossary} className={'logo'} alt="Logo" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <Nav.Link href="#link">Link</Nav.Link>
-                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown>
                         </Nav>
+                        <GitHubIcon />
                     </Navbar.Collapse>
                 </Container>
+
             </Navbar>
         );
     }
